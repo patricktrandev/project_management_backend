@@ -1,0 +1,11 @@
+package com.blackcoffee.projectmanagement.repository;
+
+import com.blackcoffee.projectmanagement.dto.CommentDto;
+import com.blackcoffee.projectmanagement.entity.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+   List<Comment> findByIssueIssueId(Long id);
+}
