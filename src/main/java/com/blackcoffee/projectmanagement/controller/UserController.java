@@ -20,10 +20,7 @@ public class UserController {
     @Autowired
     private ProjectService projectService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUserProfile(@PathVariable("id") Long id){
-        return ResponseEntity.ok(userService.findUserById(id));
-    }
+
 
     @GetMapping("/{id}/projects")
     public ResponseEntity<List<AllProjectsByUser>> getAllProjects(@PathVariable("id") Long userId,

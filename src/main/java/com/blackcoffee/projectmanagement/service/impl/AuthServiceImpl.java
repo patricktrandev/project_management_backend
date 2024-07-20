@@ -64,8 +64,9 @@ public class AuthServiceImpl implements AuthService {
         if(user==null){
             throw new ProjectAPIException(HttpStatus.INTERNAL_SERVER_ERROR, "User not found  with email");
         }
+        authResponse.setId(user.getUserId());
         authResponse.setFullName(user.getFullName());
-        authResponse.setMessage("Login successfully");
+        authResponse.setSuccess("true");
         return authResponse;
     }
 
@@ -88,7 +89,7 @@ public class AuthServiceImpl implements AuthService {
         authResponse.setEmail(user.getEmail());
         authResponse.setToken(jwtToken);
         authResponse.setFullName(user.getFullName());
-        authResponse.setMessage("Register successfully");
+        authResponse.setSuccess("true");
         return authResponse;
     }
 }

@@ -44,7 +44,7 @@ public class EmailServiceImpl implements EmailService {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper= new MimeMessageHelper(mimeMessage,"utf-8");
 
-        String subject="Reset Passowrd | Project Management";
+        String subject="Reset Password | Project Management";
         String text="Your otp: \n"+otp;
         helper.setFrom(sender);
         helper.setTo(userEmail);
